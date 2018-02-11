@@ -1,13 +1,12 @@
 from nltk.book import *
 import sys
 
-funs = [['1_1', '1_2', '1_3', '1_4', '1_5',
+funs = ['1_1', '1_2', '1_3', '1_4', '1_5',
          '1_6', '1_7', '1_8', '1_9', '1_10',
          '1_11', '1_12', '1_13', '1_14', '1_15',
          '1_16', '1_17', '1_18', '1_19', '1_20',
          '1_21', '1_22', '1_23', '1_24', '1_25',
-         '1_26', '1_27', '1_28', '1_29'],
-         [],]
+         '1_26', '1_27', '1_28', '1_29']
 
 def fun1_1():
     print(12/(4+1))
@@ -130,14 +129,12 @@ def fun1_28():
 def fun1_29():
     print('判断sent3是否为text1的真子集')
     
-def select(funname, times):
-    if funname in funs[times]:
+def select(funname):
+    if funname in funs:
         globals().get('fun%s' % funname)()
     
 if  __name__ == '__main__':
     while(True):
-        num = input('请输入要查看第几次作业:')
-        times = int(num)-1
-        for fun in funs[times]:
+        for fun in funs:
             print(fun)
-        select(funname = input('请输入要查看的作业编号:'), times=times)
+        select(funname = input('请输入要查看的作业编号:'))
